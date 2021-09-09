@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31624.102
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DivibankWebApp", "DivibankWebApp\DivibankWebApp.csproj", "{450F709F-FF83-42DF-AF13-7AC7A6070BC3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{450F709F-FF83-42DF-AF13-7AC7A6070BC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{450F709F-FF83-42DF-AF13-7AC7A6070BC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{450F709F-FF83-42DF-AF13-7AC7A6070BC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{450F709F-FF83-42DF-AF13-7AC7A6070BC3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {180789A8-E072-4A76-AE65-DBC2B6EC7EC7}
+	EndGlobalSection
+EndGlobal
