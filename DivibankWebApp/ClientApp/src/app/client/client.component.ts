@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Client } from '../shared/client.model';
+import { ClientService } from '../shared/client.service';
 
 @Component({
   selector: 'app-client',
@@ -8,9 +10,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ClientComponent implements OnInit {
 
-  constructor() { }
+  constructor(public service: ClientService) { }
 
   ngOnInit(): void {
+    this.service.refreshList();
   }
 
+  populateForm(selectedRecord: Client) {
+    this.service.formData = Object.assign({}, selectedRecord);
+  }
+
+  onDelete(id: number) {
+    this.service.deleteClient(id)
+      .subscribe(
+        res => {
+          this.service.refreshList();
+        },
+        err => { console.log(err) }
+      )
+  }
 }
