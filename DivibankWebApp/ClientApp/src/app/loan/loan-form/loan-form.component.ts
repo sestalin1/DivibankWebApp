@@ -8,7 +8,7 @@ import { Loan } from '../../shared/loan.model';
   styles: [
   ]
 })
-export class MemberFormComponent implements OnInit {
+export class LoanFormComponent implements OnInit {
   constructor(public service: LoanService) {
   }
   ngOnInit(): void {

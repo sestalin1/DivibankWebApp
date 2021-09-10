@@ -8,7 +8,7 @@ import { Client } from '../../shared/client.model';
   styles: [
   ]
 })
-export class MemberFormComponent implements OnInit {
+export class ClientFormComponent implements OnInit {
   constructor(public service: ClientService) {
   }
   ngOnInit(): void {
