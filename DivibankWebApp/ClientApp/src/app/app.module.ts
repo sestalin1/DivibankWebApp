@@ -7,6 +7,8 @@ import { ClientComponent } from './client/client.component';
 import { LoanComponent } from './loan/loan.component';
 import { ClientFormComponent } from './client/client-form/client-form.component';
 import { LoanFormComponent } from './loan/loan-form/loan-form.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import { LoanFormComponent } from './loan/loan-form/loan-form.component';
     ClientComponent,
     LoanComponent,
     ClientFormComponent,
-    LoanFormComponent
+    LoanFormComponent,
+    FormsModule,
+    HttpClientModule
   ],
   imports: [
     BrowserModule,
