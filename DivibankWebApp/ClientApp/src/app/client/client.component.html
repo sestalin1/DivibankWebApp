@@ -1,1 +1,24 @@
-<app-client-form></app-client-form>
+<div class="jumbotron py-2">
+  <h1 class="display-4 text-center">Client Form</h1>
+</div>
+<div class="row">
+  <app-client-form></app-client-form>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Birthday</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of service.list">
+        <td (click)="populateForm(row)">{{row.name}}</td>
+        <td (click)="populateForm(row)">{{row.birthday}}</td>
+        <td>
+          <i class="far fa-trash-alt fa-lg text-danger" (click)="onDelete(row.id)"></i>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,1 +1,27 @@
-<app-loan-form></app-loan-form>
+<div class="jumbotron py-2">
+  <h1 class="display-4 text-center">Loan Form</h1>
+</div>
+<div class="row">
+  <app-loan-form></app-loan-form>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Date of Request</th>
+        <th>Amount</th>
+        <th>Client</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of service.list">
+        <td (click)="populateForm(row)">{{row.requestDate}}</td>
+        <td (click)="populateForm(row)">{{row.amount}}</td>
+        <td (click)="populateForm(row)">{{row.client.name}}</td>
+        <td>
+          <i class="far fa-trash-alt fa-lg text-danger" (click)="onDelete(row.id)"></i>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
