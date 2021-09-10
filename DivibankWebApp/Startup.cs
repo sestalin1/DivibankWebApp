@@ -1,6 +1,8 @@
+using DivibankWebApp.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.SpaServices.AngularCli;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -25,6 +27,9 @@ namespace DivibankWebApp
             {
                 configuration.RootPath = "ClientApp/dist";
             });
+
+            string connectionString = Configuration.GetConnectionString("default");
+            services.AddDbContext<AppDBContext>(c => c.UseSqlServer(connectionString));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
