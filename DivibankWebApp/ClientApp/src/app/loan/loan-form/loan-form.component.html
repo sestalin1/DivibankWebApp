@@ -3,25 +3,26 @@
          value="service.formData.id" />
   <div class="form-row">
     <div class="form-group col-md-3">
-      <label>Client</label>
-      <input class="form-control form-control-lg" placeholder="Client"
-             name="client" #firstname="ngModel" [(ngModel)]="service.formData.client" required />
-    </div>
-    <div class="form-group col-md-3">
-      <label>Requested Date</label>
-      <input class="form-control form-control-lg" placeholder="Requested Date"
-             name="requestedDate" #firstname="ngModel" [(ngModel)]="service.formData.requestedDate" required />
-    </div>
-    <div class="form-group col-md-3">
-      <label>Amount</label>
-      <input class="form-control form-control-lg" placeholder="Requested Amomunt"
-             name="amount" #firstname="ngModel" [(ngModel)]="service.formData.amount" required />
-    </div>
+        <label>Client</label>
+        <select class="form-control form-control-lg" placeholder="Select..."
+               name="client" #name="ngModel" [(ngModel)]="service.formData.client" required>
+          <option></option>
+        </select>
+      </div>
+      <div class="form-group col-md-3">
+        <label>Request Date</label>
+        <input class="form-control form-control-lg" placeholder="Request Date"
+               name="requestDate" #requestedDate="ngModel" [(ngModel)]="service.formData.requestDate" required />
+      </div>
+      <div class="form-group col-md-3">
+        <label>Amount</label>
+        <input class="form-control form-control-lg" placeholder="Request Amomunt"
+               name="amount" #amount="ngModel" [(ngModel)]="service.formData.amount" required />
+      </div>
 
-    <div class="form-group">
-      <label>``</label>
-      <button class="btn btn-primary btn-lg btn-block" type="submit" [disabled]="form.invalid">Submit</button>
+      <div class="form-group">
+        <label>``</label>
+        <button class="btn btn-primary btn-lg btn-block" type="submit" [disabled]="form.invalid">Submit</button>
+      </div>
     </div>
-  </div>
-</form>
-
+  </form>

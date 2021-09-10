@@ -4,7 +4,7 @@ export class Client {
   id: number;
   name: string;
   birthday: Date;
-  loans = [Loan];
+  loans = [];
 
   constructor() {
     this.id = 0

@@ -17,12 +17,13 @@ import { HttpClientModule } from '@angular/common/http';
     LoanComponent,
     ClientFormComponent,
     LoanFormComponent,
-    FormsModule,
-    HttpClientModule
+    
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

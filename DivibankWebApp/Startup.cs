@@ -30,6 +30,11 @@ namespace DivibankWebApp
 
             string connectionString = Configuration.GetConnectionString("default");
             services.AddDbContext<AppDBContext>(c => c.UseSqlServer(connectionString));
+
+            services.AddCors(c =>
+            {
+                c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin());
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -71,6 +76,8 @@ namespace DivibankWebApp
                     spa.UseAngularCliServer(npmScript: "start");
                 }
             });
+
+            app.UseCors(options => options.AllowAnyOrigin());
         }
     }
 }
