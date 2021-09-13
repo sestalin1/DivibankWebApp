@@ -14,17 +14,20 @@ export class ClientComponent implements OnInit {
 
   ngOnInit(): void {
     this.service.refreshList();
+    
   }
 
   populateForm(selectedRecord: Client) {
+    
     this.service.formData = Object.assign({}, selectedRecord);
+   // this.service.formData.birthday = selectedRecord.birthday;
   }
 
   onDelete(id: number) {
     this.service.deleteClient(id)
       .subscribe(
         res => {
-          this.service.refreshList();
+          this.service.refreshList(); 
         },
         err => { console.log(err) }
       )

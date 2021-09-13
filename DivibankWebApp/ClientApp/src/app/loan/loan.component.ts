@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Loan } from '../shared/loan.model';
 import { LoanService } from '../shared/loan.service';
+import { ClientService } from '../shared/client.service';
 
 @Component({
   selector: 'app-loan',
@@ -10,14 +11,15 @@ import { LoanService } from '../shared/loan.service';
 })
 export class LoanComponent implements OnInit {
 
-  constructor(public service: LoanService) { }
+  constructor(public service: LoanService, public clientService: ClientService) { }
 
   ngOnInit(): void {
     this.service.refreshList();
+    //this.service.list.push(this.clientService.);
   }
 
   populateForm(selectedRecord: Loan) {
-    this.service.formData = Object.assign({}, selectedRecord);
+    this.service.formDataPost = Object.assign({}, selectedRecord);
   }
 
   onDelete(id: number) {

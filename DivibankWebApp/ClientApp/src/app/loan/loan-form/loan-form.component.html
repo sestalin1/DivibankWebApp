@@ -1,27 +1,24 @@
 <form novalidate #form="ngForm" (submit)="onSubmit(form)">
   <input type="hidden" name="id"
-         value="service.formData.id" />
+         value="service.formDataPost.id" />
   <div class="form-row">
-    <div class="form-group col-md-3">
+    <div class="form-group col-md-5">
         <label>Client</label>
-        <select class="form-control form-control-lg" placeholder="Select..."
-               name="client" #name="ngModel" [(ngModel)]="service.formData.client" required>
-          <option></option>
+        <select class="form-control form-control-lg"
+                name="clientId" #name="ngModel" [(ngModel)]="service.formDataPost.clientId"  required>
+          <option [value]="" selected ng-selected="true">Choose...</option>
+          <option *ngFor="let client of clientService.list" [value]="client.id">{{client.name}}</option>
         </select>
       </div>
-      <div class="form-group col-md-3">
-        <label>Request Date</label>
-        <input class="form-control form-control-lg" placeholder="Request Date"
-               name="requestDate" #requestedDate="ngModel" [(ngModel)]="service.formData.requestDate" required />
-      </div>
-      <div class="form-group col-md-3">
+      
+      <div class="form-group col-md-5">
         <label>Amount</label>
         <input class="form-control form-control-lg" placeholder="Request Amomunt"
-               name="amount" #amount="ngModel" [(ngModel)]="service.formData.amount" required />
+               name="amount" #amount="ngModel" [(ngModel)]="service.formDataPost.amount" required />
       </div>
 
       <div class="form-group">
-        <label>``</label>
+        <label>--</label>
         <button class="btn btn-primary btn-lg btn-block" type="submit" [disabled]="form.invalid">Submit</button>
       </div>
     </div>

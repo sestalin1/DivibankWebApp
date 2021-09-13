@@ -1,22 +1,22 @@
 <div class="jumbotron py-2">
-  <h1 class="display-4 text-center">Loan Form</h1>
+  <h1 class="display-4 text-center">Loans</h1>
 </div>
-<div class="row">
+<div class="col-md-12">
   <app-loan-form></app-loan-form>
   <table class="table">
     <thead>
       <tr>
-        <th>Date of Request</th>
-        <th>Amount</th>
         <th>Client</th>
+        <th>Amount</th>
+        <th>Date of Request</th>
         <th></th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let row of service.list">
-        <td (click)="populateForm(row)">{{row.requestDate}}</td>
-        <td (click)="populateForm(row)">{{row.amount}}</td>
-        <td (click)="populateForm(row)">{{row.client.name}}</td>
+      <tr *ngFor="let row of service.list; index as i">
+        <td (click)="populateForm(row)">{{row.client.name }}</td>
+        <td (click)="populateForm(row)">{{row.amount | currency}}</td>
+        <td (click)="populateForm(row)">{{row.requestDate | date:"d/MMM/y"}}</td> 
         <td>
           <i class="far fa-trash-alt fa-lg text-danger" (click)="onDelete(row.id)"></i>
         </td>

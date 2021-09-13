@@ -8,7 +8,7 @@ export class ClientService {
 
   constructor(private http: HttpClient) {
   }
-  readonly _baseUrl = "https://localhost:44336/api/Client";
+  readonly _baseUrl = "http://localhost:30358/api/Client";
   formData: Client = new Client();
   list: Client[] = [];
 
@@ -16,14 +16,14 @@ export class ClientService {
     return this.http.post(this._baseUrl, this.formData);
   }
   putClient() {
-    return this.http.put("${this._baseUrl}/${this.formData.id}", this.formData);
+    return this.http.put(`${this._baseUrl}/${this.formData.id}`, this.formData);
   }
   deleteClient(id: number) {
-    return this.http.delete("${this._baseUrl}/${ id }");
+    return this.http.delete(`${this._baseUrl}/${id}`);
   }
   refreshList() {
     this.http.get(this._baseUrl)
       .toPromise()
-      .then(res => this.list = res as Client[]);
+      .then(res =>  this.list = res as Client[]);
   }
 }

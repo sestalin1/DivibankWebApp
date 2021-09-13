@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Threading.Tasks;
+
 
 namespace DivibankWebApp.Models
 {
@@ -11,14 +9,16 @@ namespace DivibankWebApp.Models
     {
         [Key]
         public long Id { get; set; }
-
+        [Required]
         [Column(TypeName = "money")]
         public decimal Amount { get; set; }
-
+        [Required]
         [Column(TypeName = "date")]
-        public DateTime Birthday { get; set; }
+        public DateTime RequestDate { get; set; }
 
-        public Client Client { get; set; }
+        [ForeignKey("Client")]
+        public long ClientId { get; set; }
+        public virtual Client Client { get; set; }
 
 
     }

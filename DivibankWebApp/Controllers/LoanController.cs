@@ -56,6 +56,7 @@ namespace DivibankWebApp.Controllers
         [HttpPost]
         public async Task<ActionResult<Loan>> InsertLoan([FromBody] Loan model)
         {
+            model.RequestDate = DateTime.Now;
             await _repository.CreateAsync<Loan>(model);
             return CreatedAtAction("GetLoan", new { id = model.Id }, model);
         }

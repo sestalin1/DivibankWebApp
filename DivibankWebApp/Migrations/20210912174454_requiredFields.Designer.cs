@@ -4,14 +4,16 @@ using DivibankWebApp.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DivibankWebApp.Migrations
 {
     [DbContext(typeof(AppDBContext))]
-    partial class AppDBContextModelSnapshot : ModelSnapshot
+    [Migration("20210912174454_requiredFields")]
+    partial class requiredFields
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -48,11 +50,11 @@ namespace DivibankWebApp.Migrations
                     b.Property<decimal>("Amount")
                         .HasColumnType("money");
 
+                    b.Property<DateTime>("Birthday")
+                        .HasColumnType("date");
+
                     b.Property<long>("ClientId")
                         .HasColumnType("bigint");
-
-                    b.Property<DateTime>("RequestDate")
-                        .HasColumnType("date");
 
                     b.HasKey("Id");
 
