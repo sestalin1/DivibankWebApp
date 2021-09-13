@@ -15,9 +15,9 @@ namespace DivibankWebApp.Models
                 );
 
             modelBuilder.Entity<Loan>().HasData(
-                new Loan { Amount = 3500, ClientId = 1, RequestDate = new DateTime() },
-                new Loan { Amount = 5800, ClientId = 2, RequestDate = new DateTime() },
-                new Loan { Amount = 4900, ClientId = 3, RequestDate = new DateTime() }
+                new Loan { Id=1, Amount = 3500, ClientId = 1, RequestDate = new DateTime() },
+                new Loan { Id=2, Amount = 5800, ClientId = 2, RequestDate = new DateTime() },
+                new Loan { Id=3, Amount = 4900, ClientId = 3, RequestDate = new DateTime() }
 
                 );
 
